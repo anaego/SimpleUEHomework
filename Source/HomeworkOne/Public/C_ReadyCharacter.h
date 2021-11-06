@@ -13,5 +13,8 @@ UCLASS()
 class HOMEWORKONE_API AC_ReadyCharacter : public AHomeworkOneCharacter
 {
 	GENERATED_BODY()
-	
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	int Health = 100;
 };
