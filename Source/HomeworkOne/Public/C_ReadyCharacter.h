@@ -15,6 +15,11 @@ class HOMEWORKONE_API AC_ReadyCharacter : public AHomeworkOneCharacter
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, ReplicatedUsing = UpdateHealthView, Replicated)
 	int Health = 100;
+
+	UFUNCTION(BlueprintImplementableEvent) 
+	void UpdateHealthView(int h);
+
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };
